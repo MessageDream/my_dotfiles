@@ -1,0 +1,72 @@
+set nocursorline " don't highlight current line
+
+" gui setting
+"set guifont=Menlo:h16:cANSI             " 设置字体
+if (&t_Co == 256 || has('gui_running'))
+  if ($TERM_PROGRAM == 'iTerm.app')
+    colorscheme solarized
+  else
+    colorscheme desert
+  endif
+endif
+
+" Disambiguate ,a & ,t from the Align plugin, making them fast again.
+"
+" This section is here to prevent AlignMaps from adding a bunch of mappings
+" that interfere with the very-common ,a and ,t mappings. This will get run
+" at every startup to remove the AlignMaps for the *next* vim startup.
+"
+" If you do want the AlignMaps mappings, remove this section, remove
+" ~/.vim/bundle/Align, and re-run rake in maximum-awesome.
+function! s:RemoveConflictingAlignMaps()
+  if exists("g:loaded_AlignMapsPlugin")
+    AlignMapsClean
+  endif
+endfunction
+command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
+silent! autocmd VimEnter * RemoveConflictingAlignMaps
+
+
+"==================自定义的键映射======================
+inoremap jj <ESC>
+
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $e <esc>`>a"<esc>`<i"<esc>
+" 括号自动生成
+
+map <F7> :if exists("syntax_on") <BAR>
+\    syntax off <BAR><CR>
+\  else <BAR>
+\syntax enable <BAR>
+\  endif
+" 单键<F7>控制syntax on/off。原因是有时候颜色太多会妨碍阅读。
+
+map <F5> :call CompileRunGcc()<CR>
+func! CompileRunGcc()
+exec "w"
+exec "!gcc % -o %<"
+exec "! ./%<"
+endfunc
+" <F5>编译和运行C程序
+
+map <F6> :call CompileRunGpp<CR>
+func! CompileRunGpp()
+exec "w"
+exec "!g++ % -o %<"
+exec "! ./<"
+endfunc
+" <F6>编译和运行C++程序
+
+" Don't write backup file if vim is being called by "crontab -e"
+au BufWrite /private/tmp/crontab.* set nowritebackup
+" Don't write backup file if vim is being called by "chpass"
+au BufWrite /private/etc/pw.* set nowritebackup
+
+" Remember last position
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif

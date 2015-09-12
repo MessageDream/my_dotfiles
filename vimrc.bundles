@@ -1,0 +1,32 @@
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+"Plugin 'Valloric/YouCompleteMe'
+
+	" golang 开发环境
+Plugin 'fatih/vim-go'
+	" python 开发环境
+Plugin 'python.vim'
+Plugin 'pylint.vim'
+	" js语法查错
+Plugin 'walm/jshint.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'pangloss/vim-javascript'
+	" css
+Plugin 'wavded/vim-stylus'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'Yggdroot/indentLine'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'wesleyche/SrcExpl'
+Plugin 'godlygeek/tabular'
+	" template
+Plugin 'aperezdc/vim-template'
+	" 状态栏
+Plugin 'bling/vim-airline'
+	" color schemes
+"Plugin 'tomasr/molokai'
+Plugin 'flazz/vim-colorschemes'
+	" snippets
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'

@@ -1,0 +1,206 @@
+ """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ """"""""""""""""""""""""""""""golang""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    au FileType go nmap <leader>r <Plug>(go-run)
+	au FileType go nmap <leader>b <Plug>(go-build)
+	au FileType go nmap <leader>t <Plug>(go-test)
+	au FileType go nmap <leader>c <Plug>(go-coverage)
+	"By default the mapping gd is enabled which opens the target identifier in current buffer. You can also open the definition/declaration in a new vertical, horizontal or tab for the word under your cursor:
+
+	au FileType go nmap <Leader>ds <Plug>(go-def-split)
+	au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+	au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+	"Open the relevant Godoc for the word under the cursor with <leader>gd or open it vertically with <leader>gv
+
+	au FileType go nmap <Leader>gd <Plug>(go-doc)
+	au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+	"Or open the Godoc in browser
+	au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+	"Show a list of interfaces which is implemented by the type under your cursor with <leader>s
+	au FileType go nmap <Leader>s <Plug>(go-implements)
+	"Show type info for the word under your cursor with <leader>i (useful if you have disabled auto showing type info via g:go_auto_type_info)
+	au FileType go nmap <Leader>i <Plug>(go-info)
+	"Rename the identifier under the cursor to a new name
+	au FileType go nmap <Leader>e <Plug>(go-rename)
+
+	"Disable opening browser after posting to your snippet to play.golang.org:
+
+	let g:go_play_open_browser = 0
+	"By default vim-go shows errors for the fmt command, to disable it:
+
+	let g:go_fmt_fail_silently = 1
+	"Enable goimports to automatically insert import paths instead of gofmt:
+
+	let g:go_fmt_command = "goimports"
+	"Disable auto fmt on save:
+
+	let g:go_fmt_autosave = 1
+	"By default binaries are installed to $GOBIN or $GOPATH/bin. To change it:
+
+	"let g:go_bin_path = expand("~/.gotools")
+	"By default syntax-highlighting for Functions, Methods and Structs is disabled. To change it:
+
+	let g:go_highlight_functions = 1
+	let g:go_highlight_methods = 1
+	let g:go_highlight_structs = 1
+	let g:go_highlight_operators = 1
+	let g:go_highlight_build_constraints = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""NerdTree""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    nnoremap <F2> :NERDTreeToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""Tagbar""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""   
+    nmap <F3> :TagbarToggle<CR>
+	let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+	let g:tagbar_width=30
+	let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : '/Users/jayden/Documents/GoProjects/bin/gotags',
+    \ 'ctagsargs' : '-sort -silent'
+	\ }
+    autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx,*.mm,*.go,*.cs call tagbar#autoopen()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""SrcExpl""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+    nmap <F4> :SrcExplToggle<CR>
+	let g:Srcexpl_winHeight = 8
+
+	" // Set 100 ms for refreshing the Source Explorer 
+	let g:SrcExpl_refreshTime = 100
+
+	let g:SrcExpl_jumpKey = "<ENTER>"
+
+	" // Set "Space" key for back  the definition context 
+	let g:SrcExpl_gobackKey = "<SPACE>"
+
+	" // In order to Avoid conflicts, the Source Explorer should know what plugins 
+	" // are using buffers. And you need add their bufname into the list below 
+	" // according to the command ":buffers!" 
+	let g:SrcExpl_pluginList = [ 
+		\ "__Tagbar__",
+        \ "NERD_tree_1", 
+        \ "Source_Explorer" 
+    \ ] 
+
+	" // Enable/Disable the local definition searching, and note that this is not 
+	" // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
+	" // It only searches for a match with the keyword according to command 'gd' 
+	let g:SrcExpl_searchLocalDef = 1 
+
+	" // Do not let the Source Explorer update the tags file when opening 
+	let g:SrcExpl_isUpdateTags = 0 
+
+	" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
+	" //  create/update a tags file 
+	let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
+
+	" // Set "<F12>" key for updating the tags file artificially 
+	let g:SrcExpl_updateTagsKey = "<F12>" 
+	set tags=tags;/
+	"搜刮上一级建树的tag
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""syntastic""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+	set statusline+=%#warningmsg#
+	set statusline+=%{SyntasticStatuslineFlag()}
+	set statusline+=%*
+
+	let g:syntastic_always_populate_loc_list = 1
+	let g:syntastic_auto_loc_list = 1
+	let g:syntastic_check_on_open = 1
+	let g:syntastic_check_on_wq = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""snippets""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+	let g:UltiSnipsExpandTrigger="<tab>"
+	let g:UltiSnipsJumpForwardTrigger="<c-b>"
+	let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+		 
+	" If you want :UltiSnipsEdit to split your window.
+	let g:UltiSnipsEditSplit="vertical"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""airline""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""powerline""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set encoding=utf-8
+set laststatus=2
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+let g:Powerline_symbols = 'fancy'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""markdown""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_folding_disabled=1
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""youcompleteme""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>jd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jf :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_confirm_extra_conf=0
+let g:ycm_collect_identifiers_from_tag_files = 1
+let g:ycm_filetype_blacklist = {
+            \ 'tagbar' : 1,
+            \ 'qf' : 1,
+            \ 'notes' : 1,
+            \ 'markdown' : 1,
+            \ 'unite' : 1,
+            \ 'text' : 1,
+            \ 'vimwiki' : 1,
+            \ 'gitcommit' : 1,
+            \}
