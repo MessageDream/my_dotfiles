@@ -15,7 +15,12 @@ for file in $filelist
 do
 	if [[ -f $file && ${file##*.} != "sh" && ${file##*.} != "png" ]]
 	then
-		echo $(ln -s $filepath/$file $HOME/.$file)
+		dotfiletomap=$HOME/.$file
+		if [ -e $dotfiletomap ]
+		then
+			rm -f $dotfiletomap
+		fi
+		$(ln -s $filepath/$file $HOME/.$file)
 	fi
 done
 

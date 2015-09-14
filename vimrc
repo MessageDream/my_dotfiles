@@ -2,6 +2,8 @@ set modelines=0    " CVE-2007-2438
 
 set nocompatible   " don't bother with vi compatibiliy
 
+set completeopt=longest,menu
+
 syntax enable                                                     " 语法高亮
 autocmd InsertLeave * se nocul
 autocmd InsertEnter * se cul                                  " 用浅色高亮当前行
