@@ -1,1 +1,2 @@
-imap jj <ESC>
+imap nn <ESC>
+vmap nn <ESC>

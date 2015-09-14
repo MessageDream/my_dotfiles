@@ -28,7 +28,8 @@ silent! autocmd VimEnter * RemoveConflictingAlignMaps
 
 
 "==================自定义的键映射======================
-inoremap jj <ESC>
+inoremap nn <ESC>
+vnoremap nn <ESC>
 
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
