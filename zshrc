@@ -57,6 +57,9 @@ source $ZSH/oh-my-zsh.sh
 
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
