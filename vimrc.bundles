@@ -1,7 +1,8 @@
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 "Plugin 'Valloric/YouCompleteMe'
-
+	" swift高亮
+Plugin 'keith/swift.vim'
 	" golang 开发环境
 Plugin 'fatih/vim-go'
 	" python 开发环境
