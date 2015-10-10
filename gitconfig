@@ -6,7 +6,7 @@
 [alias]
 		co = checkout
 		br = branch
-		ci = commit
+		ci = commit -a -m
 		rb = rebase
 		mg = merge
 		st = status
@@ -28,10 +28,9 @@
 		frag = magenta
 		plain = white bold
 		old = red bold
-		new = green bold
+		new = green
 		commit = yellow bold
 		func = green dim
-		#plain = white bold
 [color "status"]
 		added = yellow
 		changed = green
@@ -52,7 +51,7 @@
 		cmd = vim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 #[difftool "sourcetree"]
 #		cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-#		path = 
+#		path =
 #[mergetool "sourcetree"]
 #		cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 #		trustExitCode = true
