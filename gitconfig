@@ -7,20 +7,55 @@
 		co = checkout
 		br = branch
 		ci = commit
+		rb = rebase
+		mg = merge
 		st = status
 		last = log -1 HEAD
 		unstage = reset HEAD --
+		d = difftool
 [color]
-		ui = true
+		diff = auto
+		status = auto
+		branch = auto
+		interactive = auto
+		ui = auto
+[color "branch"]
+		current = yellow reverse
+		local = yellow
+		remote = green
+[color "diff"]
+		meta = yellow bold
+		frag = magenta
+		plain = white bold
+		old = red bold
+		new = green bold
+		commit = yellow bold
+		func = green dim
+		#plain = white bold
+[color "status"]
+		added = yellow
+		changed = green
+		untracked = cyan
 [core]
 		editor = vim
-		excludesfile = /Users/aha/.gitignore
-[difftool "sourcetree"]
-		cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-		path = 
-[mergetool "sourcetree"]
-		cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-		trustExitCode = true
+		excludesfile = \"$HOME\"/.gitignore
+[diff]
+		tool = vimdiff
+[difftool]
+		prompt = true
+[merge]
+		tool = vimdiff3
+[mergetool]
+		prompt = true
+		keepBackup = false
+[mergetool "vimdiff3"]
+		cmd = vim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+#[difftool "sourcetree"]
+#		cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#		path = 
+#[mergetool "sourcetree"]
+#		cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+#		trustExitCode = true
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
