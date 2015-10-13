@@ -24,12 +24,12 @@
 		local = yellow
 		remote = green
 [color "diff"]
-		meta = yellow bold
+		meta = yellow
 		frag = magenta
-		plain = white bold
-		old = red bold
+		plain = white
+		old = red
 		new = green
-		commit = yellow bold
+		commit = yellow
 		func = green dim
 [color "status"]
 		added = yellow
@@ -41,11 +41,11 @@
 [diff]
 		tool = vimdiff
 [difftool]
-		prompt = true
+		prompt = false
 [merge]
 		tool = vimdiff3
 [mergetool]
-		prompt = true
+		prompt = false
 		keepBackup = false
 [mergetool "vimdiff3"]
 		cmd = vim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
