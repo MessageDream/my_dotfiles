@@ -1,6 +1,6 @@
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 	" swift高亮
 Plugin 'keith/swift.vim'
 	" golang 开发环境
