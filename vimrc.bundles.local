@@ -204,3 +204,10 @@ let g:ycm_filetype_blacklist = {
             \ 'vimwiki' : 1,
             \ 'gitcommit' : 1,
             \}
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" easymotion
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map  <space> <Plug>(easymotion-sn)
+omap <space> <Plug>(easymotion-tn)

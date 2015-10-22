@@ -60,6 +60,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+alias vi=vim
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

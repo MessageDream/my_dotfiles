@@ -25,6 +25,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'aperezdc/vim-template'
 	" 状态栏
 Plugin 'bling/vim-airline'
+Plugin 'easymotion/vim-easymotion'
 	" color schemes
 "Plugin 'tomasr/molokai'
 Plugin 'flazz/vim-colorschemes'
