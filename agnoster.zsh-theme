@@ -210,7 +210,7 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
   #prompt_context
-  prompt_segment black default "♂"
+  prompt_segment black white ""
   prompt_dir
   prompt_git
   prompt_hg
