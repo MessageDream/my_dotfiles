@@ -51,7 +51,7 @@ plugins=(git,zsh-syntax-highlighting,svn)
 export GOPATH=$HOME/Documents/GoProjects
 export VIM_APP_DIR=/Applications
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/local/android-sdk-macosx/tools:/usr/local/android-sdk-macosx/platform-tools:/usr/local/android-ndk"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:~/Library/Android/android-ndk"
 # export MANPATH="/usr/local/man:$MANPATH"
 source $ZSH/oh-my-zsh.sh 
 
@@ -60,6 +60,7 @@ source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+alias vim=/usr/local/Cellar/vim/7.4.1707/bin/vim
 alias vi=vim
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
