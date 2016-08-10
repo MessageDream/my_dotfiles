@@ -58,6 +58,7 @@ source $ZSH/oh-my-zsh.sh
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR=~/.nvm
+export JAVA_HOME=$(/usr/libexec/java_home)
 source $(brew --prefix nvm)/nvm.sh
 
 alias vim=/usr/local/Cellar/vim/7.4.1707/bin/vim
