@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jayden/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -49,7 +49,6 @@ plugins=(git,zsh-syntax-highlighting,svn)
 
 # User configuration
 export GOPATH=$HOME/Documents/GoProjects
-export VIM_APP_DIR=/Applications
 
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:~/Library/Android/android-ndk"
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -61,7 +60,7 @@ export NVM_DIR=~/.nvm
 export JAVA_HOME=$(/usr/libexec/java_home)
 source $(brew --prefix nvm)/nvm.sh
 
-alias vim=/usr/local/Cellar/vim/7.4.1707/bin/vim
+alias vim=/usr/local/bin/vim
 alias vi=vim
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
