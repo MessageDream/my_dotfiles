@@ -50,8 +50,8 @@ plugins=(git,zsh-syntax-highlighting,svn)
 # User configuration
 export GOPATH=$HOME/Documents/GoProjects
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:~/Library/Android/android-ndk"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:~/Library/Android/android-ndk"
+# export MANPATH="/usr/local/man:$MANPATH
 source $ZSH/oh-my-zsh.sh 
 
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
