@@ -30,5 +30,5 @@ Plugin 'easymotion/vim-easymotion'
 "Plugin 'tomasr/molokai'
 Plugin 'flazz/vim-colorschemes'
 	" snippets
-Plugin 'SirVer/ultisnips'
+" Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
