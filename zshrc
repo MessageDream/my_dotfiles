@@ -50,7 +50,7 @@ plugins=(git,zsh-syntax-highlighting,svn)
 # User configuration
 export GOPATH=$HOME/Documents/GoProjects
 
-export PATH=${PATH}:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:~/Library/Android/android-ndk"
+export PATH=${PATH}:${GOPATH}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:~/Library/Android/android-ndk"
 # export MANPATH="/usr/local/man:$MANPATH
 source $ZSH/oh-my-zsh.sh 
 
