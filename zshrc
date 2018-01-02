@@ -48,20 +48,40 @@ ZSH_THEME="agnoster"
 plugins=(git,zsh-syntax-highlighting,svn)
 
 # User configuration
-export GOPATH=$HOME/Documents/GoProjects
-
-export PATH=${PATH}:${GOPATH}/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools:~/Library/Android/android-ndk"
 # export MANPATH="/usr/local/man:$MANPATH
-source $ZSH/oh-my-zsh.sh 
+source $ZSH/oh-my-zsh.sh
 
 source $ZSH/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export NVM_DIR=~/.nvm
+
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+# java
 export JAVA_HOME=$(/usr/libexec/java_home)
-source $(brew --prefix nvm)/nvm.sh
+export PATH=$PATH:$JAVA_HOME/bin
+
+# android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK=$ANDROID_HOME/tools
+export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+export ANDROID_NDK=$HOME/Library/Android/android-ndk
+export PATH=$PATH:$ANDROID_SDK:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK
+
+# maven
+export MAVEN_HOME=/usr/local/maven-3.5.0
+export PATH=$PATH:$MAVEN_HOME/bin
+
+# golang
+export GOPATH=$HOME/Documents/GoProjects
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin"
 
 alias vim=/usr/local/bin/vim
 alias vi=vim
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

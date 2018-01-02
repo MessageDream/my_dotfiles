@@ -37,7 +37,7 @@
 	untracked = cyan
 [core]
 	editor = vim
-	excludesfile = /Users/jayden/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [diff]
 	tool = vimdiff
 [difftool]
@@ -51,8 +51,9 @@
 [mergetool "vimdiff3"]
 	cmd = vim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 	required = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
@@ -60,3 +61,5 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = ~/.stCommitMsg
