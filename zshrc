@@ -64,7 +64,7 @@ export PATH=$PATH:$JAVA_HOME/bin
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
-export ANDROID_NDK=$HOME/Library/Android/android-ndk
+export ANDROID_NDK=$ANDROID_HOME/ndk-bundle
 export PATH=$PATH:$ANDROID_SDK:$ANDROID_PLATFORM_TOOLS:$ANDROID_NDK
 
 # maven
