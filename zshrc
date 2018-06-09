@@ -73,7 +73,7 @@ export PATH=$PATH:$MAVEN_HOME/bin
 
 # golang
 export GOPATH=$HOME/Documents/GoProjects
-export GOROOT=/usr/local/go
+# export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # RVM
