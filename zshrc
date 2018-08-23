@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="agnoster"
+ZSH_THEME="agnoster-jd"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -45,7 +45,13 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git,zsh-syntax-highlighting,svn)
+
+plugins=(git,svn,zsh-syntax-highlighting,autojump,brew,golang,docker,node,npm,pip,vscode,xcode)
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH
@@ -78,6 +84,9 @@ export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin"
+
+# conda
+export PATH="$PATH:$HOME/anaconda3/bin"
 
 alias vim=/usr/local/bin/vim
 alias vi=vim
